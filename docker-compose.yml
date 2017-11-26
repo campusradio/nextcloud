@@ -1,20 +1,23 @@
-version: "3"
+version: "3.3"
 
 services:
+
   server:
     image: nextcloud
     ports:
-      - 8080:80
-    volumes:
-      - ./data/data:/var/www/html/data
-      - ./data/config:/var/www/html/config
-      - ./data/custom_apps:/var/www/html/custom_apps
-  
-  maria:
-    image: mariadb
-    volumes:
-      - ./data/db:/var/lib/mysql
+      - 3000:80
     env_file:
-      - app.env
+      - .env
+    volumes:
+      - ./data/nc/data:/var/www/html/data
+      - ./data/nc/config:/var/www/html/config
+      - ./data/nc/custom_apps:/var/www/html/custom_apps
+      - ./data/nc/themes:/var/www/html/themes
 
-    
+  db:
+    restart: always
+    image: postgres
+    env_file:
+      - .env
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
