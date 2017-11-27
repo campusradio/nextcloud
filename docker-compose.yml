@@ -4,6 +4,7 @@ services:
 
   server:
     image: nextcloud
+    restart: always
     ports:
       - 3000:80
     env_file:
@@ -15,8 +16,8 @@ services:
       - ./data/nc/themes:/var/www/html/themes
 
   db:
-    restart: always
     image: postgres
+    restart: always
     env_file:
       - .env
     volumes:
