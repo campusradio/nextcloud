@@ -26,13 +26,13 @@ docker-compose up -d
 
 Conains all the necessary volumes for persistence, so it can be updated without issues.
 
-###### Nextcloud Server
+##### Nextcloud Server
 
 - ./data/nc/data:/var/www/html/data
 - ./data/nc/config:/var/www/html/config
- - ./data/nc/custom_apps:/var/www/html/custom_apps
- - ./data/nc/themes:/var/www/html/themes
+- ./data/nc/custom_apps:/var/www/html/custom_apps
+- ./data/nc/themes:/var/www/html/themes
 
-###### Postgres
+##### Postgres
 
 - ./data/db:/var/lib/postgresql/data
