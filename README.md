@@ -18,12 +18,13 @@ vim .env
 
 # Let's docker 🚀
 docker-compose up -d
+# Wait for 30-60s the DB initialization ⏱
 # localhost:3000 🎉
 ```
 
 ## Volumes 💾
 
-Conains all the necessary volumes for persistence, so can be updated without issues.
+Conains all the necessary volumes for persistence, so it can be updated without issues.
 
 ###### Nextcloud Server
 
